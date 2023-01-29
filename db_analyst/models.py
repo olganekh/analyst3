@@ -1,7 +1,6 @@
-# Create your models here.
 from django.db import models
 
-
+# Create your models here.
 class User_verification(models.Model):
     """Таблица Аутентификации пользователя"""
     id = models.BigAutoField(primary_key=True)
@@ -9,8 +8,8 @@ class User_verification(models.Model):
     name = models.CharField(blank=True, verbose_name='Имя пользователя', max_length=50, )
     activating_bot = models.CharField(max_length=50, verbose_name='Активация бота')
     goal = models.CharField(blank=True, max_length=50, verbose_name='есть цель')
-    price = models.IntegerField(verbose_name='Цена', null=True, blank=True)
-    income = models.IntegerField(verbose_name='Доход', null=True, blank=True)
+    price = models.IntegerField(verbose_name='Цена', null=True)
+    income = models.IntegerField(verbose_name='Доход', null=True)
     data = models.CharField(max_length=15, verbose_name='Дата покупки')
 
     class Meta:
@@ -33,7 +32,3 @@ class Purposes(models.Model):
     class Meta:
         verbose_name = 'Цели'
         verbose_name_plural = 'Цели'
-
-    # def __str__(self):
-    #     return {self.}
-
